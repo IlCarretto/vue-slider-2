@@ -16,7 +16,7 @@
         <div class="container" >
             <div class="slider-wrapper" tabindex="0">
 
-                <div class="item">
+                <div @mouseover="stopAutoPlay" @mouseleave="autoPlay" class="item">
                     <img :src="games[currentPosition].image" alt="Svezia" />
                     <div class="text">
                         <h3>{{games[currentPosition].title}}</h3>

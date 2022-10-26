@@ -32,6 +32,7 @@ createApp({
                 }
             ],
             currentPosition: 0,
+            autoPlay: setInterval(this.nextSlide, 3000),
         }
     },
     methods: {
@@ -51,6 +52,13 @@ createApp({
         },
         activeThumb(slideIndex) {
             this.currentPosition = slideIndex;
+        },
+        stopAutoPlay: function() {
+            clearInterval(this.autoPlay);
         }
+    },
+    created: function() {
+        this.autoPlay;
+        this.stopAutoPlay
     }
 }).mount("#app");
